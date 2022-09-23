@@ -16,3 +16,5 @@ if cont == 0:
     print(f'the number {number} is prime')
 else:
     print(f'the number {number} isnt prime')
+    #recordar y repasar
+    
