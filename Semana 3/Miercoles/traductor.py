@@ -7,4 +7,12 @@ for translation in lista:
     key_spanish = values[1]
     dic[key_english]= key_spanish
 
-input_totranslate= input()
+input_totranslate = input('please enter a phrase to translate: ')
+word_list = input_totranslate.split(' ')
+word_results = ''
+
+for word in word_list:
+    word_results = ''
+for word in word_list:
+    word_results += dic.get(word,word)
+    word_results += ""
