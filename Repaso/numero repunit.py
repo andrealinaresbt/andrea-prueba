@@ -19,7 +19,7 @@ else:
     print(f'the number {Strnum} is repunit')
 
 cuadrado = False
-for j in range(0, sumDigitos):
+for j in range(2, sumDigitos):
     if j**2 == sumDigitos:
         cuadrado = True
         break

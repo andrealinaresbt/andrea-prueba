@@ -23,10 +23,10 @@ def main():
         #esto calcula divisores
    
 
-    if acum == acum2   :
-   print(f'the numbers {num1} and {num2} are friends')
-   else:
-    print (f'the numbers {num1} and {num2} are friends')
+    if acum == acum2:
+        print('the numbers are friends')
+    else:
+        print ('the numbers are not friends')
    
     
 
