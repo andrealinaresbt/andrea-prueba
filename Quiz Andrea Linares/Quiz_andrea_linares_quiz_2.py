@@ -106,16 +106,19 @@ def main ():
             option = int(option)
             if option == 1:
                 for types,brand in medications.items():
+                    print(f' ----- {types} ----- \n')
                     
                     for brand_name, medication_list in brand.items():
+                        print(f' -----{brand_name}-----')
 
                         for med, medicine in medication_list.items():
+                            print(f'\n TYPE: {med}') 
                            
                             for key  in medicine:
                                 id = key.get('id')
                                 name = key.get('name')
                                 price = key.get('price')
-                                print(f' Your product is {types}, {brand_name} and {med} \n  {id} \n name --> {name} \n price --> {price}' )
+                                print(f' \n ID: {id} \n name --> {name} \n price --> {price} \n ')
                                 
                             
                             
@@ -164,28 +167,6 @@ def main ():
             if option == 3:
                 print('thank you for coming')
                 break
-        
-                
-
-                
-                    
-
-
-
-                                        
-
-                                        
-                                        
-                                        
-                                                
-
-                                
-                                        
-
-                            
-                        
-                            
-                           
             
 
 main()
