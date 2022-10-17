@@ -4,14 +4,20 @@ from http import client
 def print_welcome():
      print('*****WELCOME*****')
 
+
 def get_user_option(dict):
     for key, value in dict.items():
+        print(key)
         for key_internos, value_internos in value.items():
-            print(f'{key} - {value_internos}', end = '')
+            print(f'----> {value_internos}', end = '')
         print('')
-    
-    return ('Please the first letter of your option: ')
+    return input('Please enter an option: ').upper()
 
+
+        
+    
+    
+    
     
 
 
@@ -45,6 +51,7 @@ def print_invoice(client):
     print('age:', client.get('age'))
     print('NetAmount:', client.get('study'))
 
+
     
 
 
@@ -58,6 +65,8 @@ def main():
     print_welcome()
     while True:
         print('what do you want to do today?')
+        study = None
+        study_picked = None
         option_menus = (input('Pick an option: \n1. Make a purchase \n2. Exit   \n   '))
         if option_menus.isnumeric:
             option_menus = int(option_menus)
@@ -65,6 +74,11 @@ def main():
                 option = get_user_option(studied_dic)
 
                 client= get_client_data(option)
+                
+
+
+
+
                 print_invoice(client)
                 clients.append(client)
             if option_menus == 2:
