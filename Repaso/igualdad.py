@@ -25,3 +25,5 @@
 
 # % es el residuo de una division por ejemplo 7%2 = 1 
 
+#string.replace(oldvalue, newvalue, count)
+

@@ -110,12 +110,12 @@ def name():
         try:
             name = input('please enter your name: ') #preguntar como hacer que no explote si le pregunto el apellido
             if not (name.isalpha()):
-                print('This is not your name.')
+                print('This is not your name.') #NO hace falta
                 raise Exception
             return name
         except: 
             print('-----This is not  valid answer. Try again.-----')
-                
+                 
 
 def payment():
 
@@ -140,18 +140,21 @@ def pedido_information():
 def compra(menu, delivery, ContadorPizza, ContadorTamano, ListaDePizza, ListaDePedidos, ContadorID, ContadorMunicipio):
     client_name, payment_method, client_id, descuento = pedido_information()
     delivery_add = 0
-    if ListaDePizza.get(pizza_option) == None:
-        ListaDePizza[pizza_option] = {"Price": {costo}, "Size": {pick_tamano}, "'Cantidad'": {cantidad}}
-        ListaDePedidos[ContadorID] = { "Nombre": client_name, "Cedula": client_id, "Forma de Pago": payment_method, 
+   
+    while True:
+        view_menu(menu)
+        
+        pizza_option, costo, tipo, cantidad, pick_tamano = orden(menu, ContadorPizza, ContadorTamano)
+        if ListaDePizza.get(pizza_option) == None:
+            ListaDePizza[pizza_option] = {"Price": {costo}, "Size": {pick_tamano}, "'Cantidad'": {cantidad}}
+            ListaDePedidos[ContadorID] = { "Nombre": client_name, "Cedula": client_id, "Forma de Pago": payment_method, 
     "CantidadPizas": cantidad,
     "Tamaño": pick_tamano,
     "Tipo de cocinado": tipo,
     "Costo": costo,
     "Delivery": delivery_add,
     "Descuento": descuento}
-    while True:
-        view_menu(menu)
-        pizza_option, costo, tipo, cantidad, pick_tamano = orden(menu, ContadorPizza, ContadorTamano)
+
         quantity = (input('do you want to buy another pizza?: \n Y-Yes \n N-No \n --->')).upper()
         
 
@@ -174,22 +177,7 @@ def compra(menu, delivery, ContadorPizza, ContadorTamano, ListaDePizza, ListaDeP
             print('Please select a valid answer')
             break
 
-    
-    
-
-
-
-
-    
-
-    
-
-    
-        
-        
-            
-
-       
+   
 
 def finish_compra(delivery, ContadorMunicipio, ListaDePedidos, ListaDePizza):
     while True:
@@ -214,7 +202,8 @@ def finish_compra(delivery, ContadorMunicipio, ListaDePedidos, ListaDePizza):
 
         elif retire_option ==2:
             delivery = 0
-            break
+            return delivery
+       
 
         else:
             print('----- This is not a valid option. Please pick a valid delivery option -----')
@@ -427,9 +416,5 @@ def main():
                 if option == 3:
                     break
 
-
-
-
-
-    
+  
 main()
